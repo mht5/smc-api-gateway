@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 1010
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123456@localhost:1000/eureka
+    healthcheck:
+      enabled: true
+
+zuul:
+  routes:
+    user-service: /user/**
+
+smc:
+  enableAccessTokenCheck: false
